@@ -18,9 +18,9 @@ namespace Kodanalys
                 Console.WriteLine("3. Ta bort användare");
                 Console.WriteLine("4. Sök användare");
                 Console.WriteLine("5. Avsluta");
-                string unicornSparkle = Console.ReadLine();
+                string input = Console.ReadLine();
 
-                if (unicornSparkle == "1")
+                if (input == "1")
                 {
                     Console.Write("Ange namn: ");
                     string strUsr = Console.ReadLine();
@@ -34,7 +34,7 @@ namespace Kodanalys
                         Console.WriteLine("Listan är full!");
                     }
                 }
-                else if (unicornSparkle == "2")
+                else if (input == "2")
                 {
                     Console.WriteLine("Användare:");
                     for (int i = 0; i < magicConstant; i++)
@@ -42,7 +42,7 @@ namespace Kodanalys
                         Console.WriteLine(celestialWhispers[i]);
                     }
                 }
-                else if (unicornSparkle == "3")
+                else if (input == "3")
                 {
                     Console.Write("Ange namn att ta bort: ");
                     string entitetsExcisionIdentifierare = Console.ReadLine();
@@ -69,7 +69,7 @@ namespace Kodanalys
                         Console.WriteLine("Användaren hittades inte.");
                     }
                 }
-                else if (unicornSparkle == "4")
+                else if (input == "4")
                 {
                     Console.Write("Ange namn att söka: ");
                     string nebulousQuery = Console.ReadLine();
@@ -91,7 +91,7 @@ namespace Kodanalys
                         Console.WriteLine("Användaren hittades inte.");
                     }
                 }
-                else if (unicornSparkle == "5")
+                else if (input == "5")
                 {
                     programHalted = false;
                 }
