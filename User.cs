@@ -11,9 +11,10 @@ namespace Kodanalys {
 
         public static void AddUser() {
             Console.Write( "\nAnge namn: " );
-            string strUsr = Console.ReadLine();
+            string nameInput = Helpers.ValidateName( Console.ReadLine() );
+
             if ( userCount < 10 ) {
-                userList[ userCount ] = strUsr;
+                userList[ userCount ] = nameInput;
                 userCount++;
             } else {
                 Console.WriteLine( "Listan är full!" );
@@ -22,6 +23,7 @@ namespace Kodanalys {
 
         public static void ListUsers() {
             Console.WriteLine( "\nAnvändare:" );
+
             for ( int i = 0; i < userCount; i++ ) {
                 Console.WriteLine( userList[ i ] );
             }

@@ -12,7 +12,7 @@ namespace Kodanalys {
                 if ( int.TryParse( input, out int result ) ) {
                     return result;
                 } else {
-                    Console.Write( "Ogiltig inmatning. Försök igen: " );
+                    Console.Write( "\nOgiltig inmatning. Försök igen: " );
                     input = Console.ReadLine();
                 }
             }
@@ -20,10 +20,10 @@ namespace Kodanalys {
 
         public static string ValidateName( string input ) {
             while( true ) {
-                if ( !string.IsNullOrWhiteSpace( input ) && Regex.IsMatch( @"^[a-zA-Z]+$", input.Trim() ) ) {
-                    return input;
+                if ( !string.IsNullOrWhiteSpace( input ) ) {
+                    return char.ToUpper( input[ 0 ] ) + input.Substring( 1 ).ToLower();
                 } else {
-                    Console.Write( "Ogiltig inmatning. Försök igen: " );
+                    Console.Write( "\nOgiltig inmatning. Försök igen: " );
                     input = Console.ReadLine();
                 }
             }
