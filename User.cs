@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 
 namespace Kodanalys {
     internal class User {
-        static string[] userList = new string[ 10 ];
-        static int userCount = 0;
+        private static List<string> userList = new();
 
         public static void AddUser() {
             Console.Write( "\nAnge namn: " );
             string nameInput = Helpers.ValidateName( Console.ReadLine() );
 
-            if ( userCount < 10 ) {
-                userList[ userCount ] = nameInput;
-                userCount++;
+            if ( userList.Count < 10 ) {
+                userList.Add( nameInput );
+                Helpers.ColoredText( $"\nAnvändaren {nameInput} lades till.", ConsoleColor.Green );
             } else {
-                Console.WriteLine( "Listan är full!" );
+                Helpers.ColoredText( "\nDet finns redan 10 användare.", ConsoleColor.Red );
             }
         }
 
@@ -66,18 +65,10 @@ namespace Kodanalys {
             Console.Write( "Ange namn att söka: " );
             string searchName = Console.ReadLine();
 
-            bool found = false;
-            for ( int i = 0; i < userCount; i++ ) {
-                if ( userList[ i ] == searchName ) {
-                    found = true;
-                    break;
-                }
-            }
-
-            if ( found ) {
-                Console.WriteLine( "Användaren finns i listan." );
+            if( userList.Exists( user => string.Equals( user, searchName, StringComparison.OrdinalIgnoreCase ) ) ) {
+                Helpers.ColoredText( "Användaren finns i listan.", ConsoleColor.Green );
             } else {
-                Console.WriteLine( "Användaren hittades inte." );
+                Helpers.ColoredText( "Användaren hittades inte.", ConsoleColor.Red );
             }
         }
     }
