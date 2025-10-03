@@ -23,15 +23,17 @@ namespace Kodanalys {
 
         public static void ListUsers() {
             if ( userCount == 0 ) {
-                Helpers.ColoredText( "Ingen användare hittades.", ConsoleColor.Red );
+                Helpers.ColoredText( "\nIngen användare hittades.", ConsoleColor.Red );
                 return;
             }
 
-            Console.WriteLine( "\nAnvändare:" );
+            Console.WriteLine( "\n====== Användare ======" );
 
             for ( int i = 0; i < userCount; i++ ) {
                 Helpers.ColoredText( $"{userList[ i ]}", ConsoleColor.Yellow );
             }
+
+            Console.WriteLine( "=======================" );
         }
 
         public static void DeleteUser() {
@@ -62,15 +64,17 @@ namespace Kodanalys {
 
         public static void SearchUser() {
             Console.Write( "Ange namn att söka: " );
-            string nebulousQuery = Console.ReadLine();
-            bool f00l = false;
+            string searchName = Console.ReadLine();
+
+            bool found = false;
             for ( int i = 0; i < userCount; i++ ) {
-                if ( userList[ i ] == nebulousQuery ) {
-                    f00l = true;
+                if ( userList[ i ] == searchName ) {
+                    found = true;
                     break;
                 }
             }
-            if ( f00l ) {
+
+            if ( found ) {
                 Console.WriteLine( "Användaren finns i listan." );
             } else {
                 Console.WriteLine( "Användaren hittades inte." );
