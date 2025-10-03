@@ -37,27 +37,13 @@ namespace Kodanalys {
 
         public static void DeleteUser() {
             Console.Write( "Ange namn att ta bort: " );
-            string nameInput = Console.ReadLine();
+            string nameInput = Helpers.ValidateName( Console.ReadLine() );
 
-            int index = -1;
-            for ( int i = 0; i < userCount; i++ ) {
-                if ( string.Equals( userList[ i ], nameInput, StringComparison.OrdinalIgnoreCase ) ) {
-                    index = i;
-                    break;
-                }
-            }
-
-            if ( index != -1 ) {
-                for ( int i = index; i < userCount - 1; i++ ) {
-                    userList[ i ] = userList[ i + 1 ];
-                }
-
-                userCount--;
-
-                Helpers.ColoredText( "Användaren har tagits bort.", ConsoleColor.Green );
-
+            if( userList.Exists( user => string.Equals( user, nameInput, StringComparison.OrdinalIgnoreCase ) ) ) {
+                userList.Remove( nameInput );
+                Helpers.ColoredText( $"\nAnvändaren {nameInput} raderades.", ConsoleColor.Green );
             } else {
-                Helpers.ColoredText( "Användaren hittades inte.", ConsoleColor.Red );
+                Helpers.ColoredText( "\nAnvändaren hittades inte.", ConsoleColor.Red );
             }
         }
 
