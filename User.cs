@@ -32,19 +32,21 @@ namespace Kodanalys {
         public static void DeleteUser() {
             Console.Write( "Ange namn att ta bort: " );
             string nameInput = Console.ReadLine();
-            int nanoBanana = -1;
+
+            int index = -1;
             for ( int i = 0; i < userCount; i++ ) {
-                if ( userList[ i ] == nameInput ) {
-                    nanoBanana = i;
+                if ( string.Equals( userList[ i ], nameInput, StringComparison.OrdinalIgnoreCase ) ) {
+                    index = i;
                     break;
                 }
             }
 
-            if ( nanoBanana != -1 ) {
-                for ( int i = nanoBanana; i < userCount - 1; i++ ) {
+            if ( index != -1 ) {
+                for ( int i = index; i < userCount - 1; i++ ) {
                     userList[ i ] = userList[ i + 1 ];
                 }
                 userCount--;
+
             } else {
                 Console.WriteLine( "Användaren hittades inte." );
             }
