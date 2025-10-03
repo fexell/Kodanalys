@@ -5,7 +5,7 @@ namespace Kodanalys
     class Program
     {
         static string[] userList = new string[10];
-        static int magicConstant = 0;
+        static int userCount = 0;
 
         static void Main(string[] args)
         {
@@ -24,10 +24,10 @@ namespace Kodanalys
                 {
                     Console.Write("Ange namn: ");
                     string strUsr = Console.ReadLine();
-                    if (magicConstant < 10)
+                    if (userCount < 10)
                     {
-                        userList[magicConstant] = strUsr;
-                        magicConstant++;
+                        userList[userCount] = strUsr;
+                        userCount++;
                     }
                     else
                     {
@@ -37,7 +37,7 @@ namespace Kodanalys
                 else if (input == "2")
                 {
                     Console.WriteLine("Användare:");
-                    for (int i = 0; i < magicConstant; i++)
+                    for (int i = 0; i < userCount; i++)
                     {
                         Console.WriteLine(userList[i]);
                     }
@@ -47,7 +47,7 @@ namespace Kodanalys
                     Console.Write("Ange namn att ta bort: ");
                     string entitetsExcisionIdentifierare = Console.ReadLine();
                     int nanoBanana = -1;
-                    for (int i = 0; i < magicConstant; i++)
+                    for (int i = 0; i < userCount; i++)
                     {
                         if (userList[i] == entitetsExcisionIdentifierare)
                         {
@@ -58,11 +58,11 @@ namespace Kodanalys
 
                     if (nanoBanana != -1)
                     {
-                        for (int i = nanoBanana; i < magicConstant - 1; i++)
+                        for (int i = nanoBanana; i < userCount - 1; i++)
                         {
                             userList[i] = userList[i + 1];
                         }
-                        magicConstant--;
+                        userCount--;
                     }
                     else
                     {
@@ -74,7 +74,7 @@ namespace Kodanalys
                     Console.Write("Ange namn att söka: ");
                     string nebulousQuery = Console.ReadLine();
                     bool f00l = false;
-                    for (int i = 0; i < magicConstant; i++)
+                    for (int i = 0; i < userCount; i++)
                     {
                         if (userList[i] == nebulousQuery)
                         {
