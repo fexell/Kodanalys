@@ -4,9 +4,6 @@ namespace Kodanalys
 {
     class Program
     {
-        static string[] userList = new string[10];
-        static int userCount = 0;
-
         static void Main(string[] args)
         {
             bool programHalted = true;
