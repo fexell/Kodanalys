@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kodanalys {
     internal class User {
-        const int MAX_USERS = 10;
+        const int MaxUsers = 10;
 
         private static List<string> userList = new();
 
@@ -26,7 +26,7 @@ namespace Kodanalys {
             }
 
             // Kontrollera om det finns mer än 10 användare
-            if ( userList.Count < MAX_USERS ) {
+            if ( userList.Count < MaxUsers ) {
                 userList.Add( nameInput );
                 Helpers.ColoredText( $"\nAnvändaren {nameInput} lades till.", ConsoleColor.Green );
             } else {
@@ -38,13 +38,16 @@ namespace Kodanalys {
         /// Visar alla användare
         /// </summary>
         public static void ListUsers() {
+
+            // Kontrollera att det _inte_ finns några användare
             if ( userList.Count == 0 ) {
-                Helpers.ColoredText( "\nIngen användare hittades.", ConsoleColor.Red );
+                Helpers.ColoredText( "\nInga användare hittades.", ConsoleColor.Red );
                 return;
             }
 
             Console.WriteLine( "\n====== Användare ======" );
 
+            // Skriv ut alla användare i listan
             foreach( string user in userList ) {
                 Helpers.ColoredText( user, ConsoleColor.Yellow );
             }
@@ -56,13 +59,22 @@ namespace Kodanalys {
         /// Tar bort en användare
         /// </summary>
         public static void DeleteUser() {
+
+            // Be om namn att ta bort
             Console.Write( "Ange namn att ta bort: " );
             string nameInput = Helpers.ValidateName( Console.ReadLine() );
 
+            // Kontrollera att namnet finns
             if( userList.Exists( user => string.Equals( user, nameInput, StringComparison.OrdinalIgnoreCase ) ) ) {
+
+                // Radera användaren
                 userList.Remove( nameInput );
+
+                // Skriv ut att användaren raderades
                 Helpers.ColoredText( $"\nAnvändaren {nameInput} raderades.", ConsoleColor.Green );
             } else {
+
+                // Skriv ut att användaren hittades inte
                 Helpers.ColoredText( "\nAnvändaren hittades inte.", ConsoleColor.Red );
             }
         }
@@ -71,12 +83,19 @@ namespace Kodanalys {
         /// Söker efter en användare
         /// </summary>
         public static void SearchUser() {
+
+            // Be om namn att söka efter
             Console.Write( "\nAnge namn att söka: " );
             string searchName = Helpers.ValidateName( Console.ReadLine() );
 
+            // Kontrollera att namnet finns
             if( userList.Exists( user => string.Equals( user, searchName, StringComparison.OrdinalIgnoreCase ) ) ) {
+
+                // Skriv ut att användaren hittades
                 Helpers.ColoredText( $"\nAnvändaren \"{searchName}\" finns i listan.", ConsoleColor.Green );
             } else {
+
+                // Skriv ut att användaren hittades inte
                 Helpers.ColoredText( $"\nAnvändaren \"{searchName}\" hittades inte.", ConsoleColor.Red );
             }
         }
