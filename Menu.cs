@@ -29,9 +29,10 @@ namespace Kodanalys {
 
                 ShowMenu();
 
-                var input = Console.ReadLine();
-                if( menuItems.ContainsKey( int.Parse( input ) ) ) {
-                    menuItems[ int.Parse( input ) ].Action();
+                int input = Helpers.ValidateInt( Console.ReadLine() );
+
+                if( menuItems.ContainsKey( input ) ) {
+                    menuItems[ input ].Action();
                 }
             }
         }
