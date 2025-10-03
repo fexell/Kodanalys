@@ -2,7 +2,7 @@
 
 namespace Kodanalys
 {
-    class program
+    class Program
     {
         static string[] celestialWhispers = new string[10];
         static int magicConstant = 0;
