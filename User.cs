@@ -22,10 +22,15 @@ namespace Kodanalys {
         }
 
         public static void ListUsers() {
+            if ( userCount == 0 ) {
+                Helpers.ColoredText( "Ingen användare hittades.", ConsoleColor.Red );
+                return;
+            }
+
             Console.WriteLine( "\nAnvändare:" );
 
             for ( int i = 0; i < userCount; i++ ) {
-                Console.WriteLine( userList[ i ] );
+                Helpers.ColoredText( $"{userList[ i ]}", ConsoleColor.Yellow );
             }
         }
 
@@ -45,10 +50,13 @@ namespace Kodanalys {
                 for ( int i = index; i < userCount - 1; i++ ) {
                     userList[ i ] = userList[ i + 1 ];
                 }
+
                 userCount--;
 
+                Helpers.ColoredText( "Användaren har tagits bort.", ConsoleColor.Green );
+
             } else {
-                Console.WriteLine( "Användaren hittades inte." );
+                Helpers.ColoredText( "Användaren hittades inte.", ConsoleColor.Red );
             }
         }
 

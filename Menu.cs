@@ -15,12 +15,13 @@ namespace Kodanalys {
         };
 
         public static void ShowMenu() {
-            Console.WriteLine( "Välj ett alternativ:" );
+            Console.WriteLine( "===== Meny ======" );
             Console.WriteLine( "1. Lägg till användare" );
             Console.WriteLine( "2. Visa alla användare" );
             Console.WriteLine( "3. Ta bort användare" );
             Console.WriteLine( "4. Sök användare" );
             Console.WriteLine( "5. Avsluta" );
+            Console.WriteLine( "=================" );
         }
 
         public static void MenuLoop() {
