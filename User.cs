@@ -48,13 +48,13 @@ namespace Kodanalys {
         }
 
         public static void SearchUser() {
-            Console.Write( "Ange namn att söka: " );
-            string searchName = Console.ReadLine();
+            Console.Write( "\nAnge namn att söka: " );
+            string searchName = Helpers.ValidateName( Console.ReadLine() );
 
             if( userList.Exists( user => string.Equals( user, searchName, StringComparison.OrdinalIgnoreCase ) ) ) {
-                Helpers.ColoredText( "Användaren finns i listan.", ConsoleColor.Green );
+                Helpers.ColoredText( $"\nAnvändaren \"{searchName}\" finns i listan.", ConsoleColor.Green );
             } else {
-                Helpers.ColoredText( "Användaren hittades inte.", ConsoleColor.Red );
+                Helpers.ColoredText( $"\nAnvändaren \"{searchName}\" hittades inte.", ConsoleColor.Red );
             }
         }
     }
