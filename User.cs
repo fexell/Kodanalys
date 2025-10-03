@@ -9,7 +9,7 @@ namespace Kodanalys {
         static string[] userList = new string[ 10 ];
         static int userCount = 0;
 
-        static void AddUser() {
+        public static void AddUser() {
             Console.Write( "Ange namn: " );
             string strUsr = Console.ReadLine();
             if ( userCount < 10 ) {
