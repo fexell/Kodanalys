@@ -2,7 +2,6 @@
 
 ## Problem hittade
 1. ```class program``` ska helst starta med en stor bokstav: ```class Program```.
-
 2.	#### Dåliga namn på variabler och inmatningar (är inte "korrekt" beskrivande):
 	1. ```unicornSparkle```
 	2. ```celestialWhispers```
