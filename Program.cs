@@ -4,7 +4,7 @@ namespace Kodanalys
 {
     class Program
     {
-        static string[] celestialWhispers = new string[10];
+        static string[] userList = new string[10];
         static int magicConstant = 0;
 
         static void Main(string[] args)
@@ -26,7 +26,7 @@ namespace Kodanalys
                     string strUsr = Console.ReadLine();
                     if (magicConstant < 10)
                     {
-                        celestialWhispers[magicConstant] = strUsr;
+                        userList[magicConstant] = strUsr;
                         magicConstant++;
                     }
                     else
@@ -39,7 +39,7 @@ namespace Kodanalys
                     Console.WriteLine("Användare:");
                     for (int i = 0; i < magicConstant; i++)
                     {
-                        Console.WriteLine(celestialWhispers[i]);
+                        Console.WriteLine(userList[i]);
                     }
                 }
                 else if (input == "3")
@@ -49,7 +49,7 @@ namespace Kodanalys
                     int nanoBanana = -1;
                     for (int i = 0; i < magicConstant; i++)
                     {
-                        if (celestialWhispers[i] == entitetsExcisionIdentifierare)
+                        if (userList[i] == entitetsExcisionIdentifierare)
                         {
                             nanoBanana = i;
                             break;
@@ -60,7 +60,7 @@ namespace Kodanalys
                     {
                         for (int i = nanoBanana; i < magicConstant - 1; i++)
                         {
-                            celestialWhispers[i] = celestialWhispers[i + 1];
+                            userList[i] = userList[i + 1];
                         }
                         magicConstant--;
                     }
@@ -76,7 +76,7 @@ namespace Kodanalys
                     bool f00l = false;
                     for (int i = 0; i < magicConstant; i++)
                     {
-                        if (celestialWhispers[i] == nebulousQuery)
+                        if (userList[i] == nebulousQuery)
                         {
                             f00l = true;
                             break;
