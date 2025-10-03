@@ -22,9 +22,9 @@
 
 ## Vad gör den nya koden bättre?
 Först av allt så är den nya koden renare, säkrare och enklare att underhålla. Den är dessutom mer framtidssäker, då om man till exempel skulle vilja kunna ha fler användare, så är det superlätt att fixa, eftersom det nu är ingen manuell array-hantering.
-Med andra ord; långsiktigt så är kodkvaliteten mycket bättre. Det är enklare att bygga ut på koden.
+Med andra ord; långsiktigt så är kodkvalitén mycket bättre. Det är enklare att bygga ut på koden.
 
-En annan nackdel är att det inte finns någon kontroll för tomma namn; den accepterar tomma namn.
+En nackdel är att det inte finns någon kontroll för tomma namn; den originella koden accepterar tomma namn. Men det är nu fixat i min kod, och det är en förbättring.
 
 Manuell skift-logik: kod för att ta bort element kopierar efterföljande element ett steg till vänster. Detta är repetitivt, utsatt för fel, och onödigt när kollektioner erbjuder denna funktion.
 Med andra ord, så tas manuell bokföring bort med mitt fix/kod (```userCount``` till ```userList.Count```).
