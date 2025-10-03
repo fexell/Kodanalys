@@ -8,10 +8,22 @@ namespace Kodanalys {
     internal class User {
         private static List<string> userList = new();
 
+        /// <summary>
+        /// Lägger till en ny användare
+        /// </summary>
         public static void AddUser() {
+
+            // Be om namn för att lägga till bland användare
             Console.Write( "\nAnge namn: " );
             string nameInput = Helpers.ValidateName( Console.ReadLine() );
 
+            // Kontrollera att namnet inte redan finns
+            if ( userList.Exists( user => string.Equals( user, nameInput, StringComparison.OrdinalIgnoreCase ) ) ) {
+                Helpers.ColoredText( $"\nAnvändaren {nameInput} finns redan.", ConsoleColor.Red );
+                return;
+            }
+
+            // Kontrollera om det finns mer än 10 användare
             if ( userList.Count < 10 ) {
                 userList.Add( nameInput );
                 Helpers.ColoredText( $"\nAnvändaren {nameInput} lades till.", ConsoleColor.Green );
