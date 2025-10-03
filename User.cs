@@ -21,15 +21,15 @@ namespace Kodanalys {
         }
 
         public static void ListUsers() {
-            if ( userCount == 0 ) {
+            if ( userList.Count == 0 ) {
                 Helpers.ColoredText( "\nIngen användare hittades.", ConsoleColor.Red );
                 return;
             }
 
             Console.WriteLine( "\n====== Användare ======" );
 
-            for ( int i = 0; i < userCount; i++ ) {
-                Helpers.ColoredText( $"{userList[ i ]}", ConsoleColor.Yellow );
+            foreach( string user in userList ) {
+                Helpers.ColoredText( user, ConsoleColor.Yellow );
             }
 
             Console.WriteLine( "=======================" );
