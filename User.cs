@@ -31,10 +31,10 @@ namespace Kodanalys {
 
         public static void DeleteUser() {
             Console.Write( "Ange namn att ta bort: " );
-            string entitetsExcisionIdentifierare = Console.ReadLine();
+            string nameInput = Console.ReadLine();
             int nanoBanana = -1;
             for ( int i = 0; i < userCount; i++ ) {
-                if ( userList[ i ] == entitetsExcisionIdentifierare ) {
+                if ( userList[ i ] == nameInput ) {
                     nanoBanana = i;
                     break;
                 }
