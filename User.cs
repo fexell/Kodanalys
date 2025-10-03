@@ -19,5 +19,50 @@ namespace Kodanalys {
                 Console.WriteLine( "Listan är full!" );
             }
         }
+
+        public static void ListUsers() {
+            Console.WriteLine( "Användare:" );
+            for ( int i = 0; i < userCount; i++ ) {
+                Console.WriteLine( userList[ i ] );
+            }
+        }
+
+        public static void DeleteUser() {
+            Console.Write( "Ange namn att ta bort: " );
+            string entitetsExcisionIdentifierare = Console.ReadLine();
+            int nanoBanana = -1;
+            for ( int i = 0; i < userCount; i++ ) {
+                if ( userList[ i ] == entitetsExcisionIdentifierare ) {
+                    nanoBanana = i;
+                    break;
+                }
+            }
+
+            if ( nanoBanana != -1 ) {
+                for ( int i = nanoBanana; i < userCount - 1; i++ ) {
+                    userList[ i ] = userList[ i + 1 ];
+                }
+                userCount--;
+            } else {
+                Console.WriteLine( "Användaren hittades inte." );
+            }
+        }
+
+        public static void SearchUser() {
+            Console.Write( "Ange namn att söka: " );
+            string nebulousQuery = Console.ReadLine();
+            bool f00l = false;
+            for ( int i = 0; i < userCount; i++ ) {
+                if ( userList[ i ] == nebulousQuery ) {
+                    f00l = true;
+                    break;
+                }
+            }
+            if ( f00l ) {
+                Console.WriteLine( "Användaren finns i listan." );
+            } else {
+                Console.WriteLine( "Användaren hittades inte." );
+            }
+        }
     }
 }

@@ -8,6 +8,10 @@ namespace Kodanalys {
     internal class Menu {
         static Dictionary<int, MenuItem> menuItems = new() {
             { 1, new MenuItem( "Lägg till användare", () => User.AddUser() ) },
+            { 2, new MenuItem( "Visa alla användare", () => User.ListUsers() ) },
+            { 3, new MenuItem( "Ta bort användare", () => User.DeleteUser() ) },
+            { 4, new MenuItem( "Sök användare", () => User.SearchUser() ) },
+            { 5, new MenuItem( "Avsluta", () => Exit() ) },
         };
 
         public static void ShowMenu() {
@@ -30,6 +34,10 @@ namespace Kodanalys {
                     menuItems[ int.Parse( input ) ].Action();
                 }
             }
+        }
+
+        public static void Exit() {
+            Environment.Exit( 0 );
         }
     }
 
