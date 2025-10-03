@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Kodanalys {
     internal class User {
+        const int MAX_USERS = 10;
+
         private static List<string> userList = new();
 
         /// <summary>
@@ -24,7 +26,7 @@ namespace Kodanalys {
             }
 
             // Kontrollera om det finns mer än 10 användare
-            if ( userList.Count < 10 ) {
+            if ( userList.Count < MAX_USERS ) {
                 userList.Add( nameInput );
                 Helpers.ColoredText( $"\nAnvändaren {nameInput} lades till.", ConsoleColor.Green );
             } else {
@@ -32,6 +34,9 @@ namespace Kodanalys {
             }
         }
 
+        /// <summary>
+        /// Visar alla användare
+        /// </summary>
         public static void ListUsers() {
             if ( userList.Count == 0 ) {
                 Helpers.ColoredText( "\nIngen användare hittades.", ConsoleColor.Red );
@@ -47,6 +52,9 @@ namespace Kodanalys {
             Console.WriteLine( "=======================" );
         }
 
+        /// <summary>
+        /// Tar bort en användare
+        /// </summary>
         public static void DeleteUser() {
             Console.Write( "Ange namn att ta bort: " );
             string nameInput = Helpers.ValidateName( Console.ReadLine() );
@@ -59,6 +67,9 @@ namespace Kodanalys {
             }
         }
 
+        /// <summary>
+        /// Söker efter en användare
+        /// </summary>
         public static void SearchUser() {
             Console.Write( "\nAnge namn att söka: " );
             string searchName = Helpers.ValidateName( Console.ReadLine() );
