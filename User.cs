@@ -10,7 +10,7 @@ namespace Kodanalys {
         static int userCount = 0;
 
         public static void AddUser() {
-            Console.Write( "Ange namn: " );
+            Console.Write( "\nAnge namn: " );
             string strUsr = Console.ReadLine();
             if ( userCount < 10 ) {
                 userList[ userCount ] = strUsr;
@@ -21,7 +21,7 @@ namespace Kodanalys {
         }
 
         public static void ListUsers() {
-            Console.WriteLine( "Användare:" );
+            Console.WriteLine( "\nAnvändare:" );
             for ( int i = 0; i < userCount; i++ ) {
                 Console.WriteLine( userList[ i ] );
             }

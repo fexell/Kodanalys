@@ -29,6 +29,7 @@ namespace Kodanalys {
 
                 ShowMenu();
 
+                Console.Write( "Val: " );
                 int input = Helpers.ValidateInt( Console.ReadLine() );
 
                 if( menuItems.ContainsKey( input ) ) {
@@ -46,9 +47,18 @@ namespace Kodanalys {
         public string Name { get; set; }
         public Action Action { get; set; }
 
-        public MenuItem( string name, Action action ) {
+        public MenuItem( string name, Action action, bool isReturn = true ) {
             Name = name;
-            Action = action;
+            
+            if( isReturn ) {
+                Action = () => {
+                    action.Invoke();
+                    Console.WriteLine( "\nTryck enter för att fortsätta..." );
+                    Console.ReadKey();
+                };
+            } else {
+                Action = action;
+            }
         }
     }
 }
