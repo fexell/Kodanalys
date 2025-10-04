@@ -20,7 +20,7 @@
 9. Foreach-loop passar bättre än for-loop (även fast for-loopar är "tekniskt" snabbare).
 10. Originalkoden kollar inte om användare med angivna namn redan finns (inte skiftlägeskänslig), i varken att skapa, radera, eller söka användare.
 11. Originalkoden kollar inte om namn är tomma, eller innehåller ogiltiga tecken (icke-bokstäver eller flera ord).
-12. Ingen validering av inmatningar (till exempel kontroll för ```null```) (t.ex. om användaren skriver in en bokstav när en siffra förväntas).
+12. Ingen validering av inmatningar (till exempel kontroll för ```null```).
 13. Användare kan lägga till samma namn flera gånger (t.ex. "Anna" kan läggas till 3 gånger).
 14. Ingen .Trim() på inmatningar, vilket kan leda till problem med extra mellanslag.
 
