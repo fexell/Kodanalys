@@ -6,6 +6,7 @@ namespace Kodanalys
     {
         static void Main(string[] args)
         {
+            // Kör menyn
             Menu.MenuLoop();
         }
     }
