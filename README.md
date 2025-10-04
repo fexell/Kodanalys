@@ -41,6 +41,8 @@ Mycket bättre än att upprepa samma kod flera gånger i olika delar av programmet.
 Att koden dessutom nu är splittrad gör koden enklare att förstå: 
 menyn hanteras i sin egna fil och klass; detsamma med metoder relaterat till användare. Detta gör koden mycket mer framtidssäker, och enklare att underhålla. Det finns bara fördelar med detta.
 
+Till sist så är min kod kommenterad, vilket gör det enklare att förstå vad som händer.
+
 *Exempel på förbättringar:*
 
 ```
