@@ -29,11 +29,11 @@ Först av allt så är den nya koden renare, säkrare och enklare att underhålla. De
 Med andra ord; långsiktigt så är kodkvalitén mycket bättre. Det är enklare att bygga ut på koden.  
 Dessutom så är den nya koden bättre strukturerad (allt ligger inte direkt i Program.cs), och därmed enklare att läsa och förstå.
 
-*Listor istället för arrayer:* jag använder mig av ```List<string>``` istället för en array. Detta gör att jag slipper manuell hantering av arrayens storlek, och jag slipper även manuell skift-logik när jag tar bort element,
-genetemot den originella koden som använder sig av en array med fast storlek (10).
-
 Dessutom så saknar den originella koden kontroll för dubbletter, validering av indata, och det fanns inte någon kontroll för tomma namn; den originella koden accepterar tomma namn.
 Men det är nu fixat i min kod, vilket är en förbättring.
+
+*Listor istället för arrayer:* jag använder mig av ```List<string>``` istället för en array. Detta gör att jag slipper manuell hantering av arrayens storlek, och jag slipper även manuell skift-logik när jag tar bort element,
+genetemot den originella koden som använder sig av en array med fast storlek (10).
 
 *Manuell skift-logik:* kod för att ta bort element kopierar efterföljande element ett steg till vänster. Detta är repetitivt, utsatt för fel, och onödigt när kollektioner erbjuder denna funktion.
 Med andra ord, så behövs inte manuell bokföring i min kod (```userCount``` till ```userList.Count```).
