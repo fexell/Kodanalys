@@ -51,7 +51,7 @@ for (int i = index; i < userCount - 1; i++) {
 }
 userCount--;
 ```
-I koden ovan så hanteras arrayen manuellt, vilket är onödigt och felbenäget. Till skillnade från detta:
+I koden ovan så hanteras arrayen manuellt, vilket är onödigt och felbenäget. Till skillnad från detta:
 ```
 userList.RemoveAll(u => string.Equals(u, nameInput, StringComparison.OrdinalIgnoreCase));
 ```
