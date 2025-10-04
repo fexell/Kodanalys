@@ -16,9 +16,13 @@
 5. “Lista användare” kan behöva en check om inga användare finns.
 6. Inget meddelande om en användare har lagts till, eller tagits bort.
 7. Använda List<string> istället för "fast" Array.
-8. Namn är fortfarande i minnet; sista array-elementet rensas aldrig, även fast den inte dycker upp i listan.
+8. När en användare tas bort flyttas elementen, men sista elementet i arrayen lämnas kvar, vilket kan leda till minnesläckage.
 9. Foreach-loop passar bättre än for-loop (även fast for-loopar är "tekniskt" snabbare).
 10. Originalkoden kollar inte om användare med angivna namn redan finns (inte skiftlägeskänslig), i varken att skapa, radera, eller söka användare.
+11. Originalkoden kollar inte om namn är tomma, eller innehåller ogiltiga tecken (icke-bokstäver eller flera ord).
+12. Ingen validering av inmatningar (till exempel kontroll för ```null```) (t.ex. om användaren skriver in en bokstav när en siffra förväntas).
+13. Användare kan lägga till samma namn flera gånger (t.ex. "Anna" kan läggas till 3 gånger).
+14. Ingen .Trim() på inmatningar, vilket kan leda till problem med extra mellanslag.
 
 ## Vad gör den nya koden bättre?
 Först av allt så är den nya koden renare, säkrare och enklare att underhålla. Den är dessutom mer framtidssäker, då om man till exempel skulle vilja kunna ha fler användare, så är det superlätt att fixa, eftersom det nu är ingen manuell array-hantering.
