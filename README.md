@@ -32,7 +32,7 @@ Dessutom så är den nya koden bättre strukturerad (allt ligger inte direkt i Prog
 *Listor istället för arrayer:* jag använder mig av ```List<string>``` istället för en array. Detta gör att jag slipper manuell hantering av arrayens storlek, och jag slipper även manuell skift-logik när jag tar bort element,
 genetemot den originella koden som använder sig av en array med fast storlek (10).
 
-Dessutom så saknar den originella koden kontroll för dubbletter, validaering av indata, och det inte fanns någon kontroll för tomma namn; den originella koden accepterar tomma namn.
+Dessutom så saknar den originella koden kontroll för dubbletter, validering av indata, och det inte fanns någon kontroll för tomma namn; den originella koden accepterar tomma namn.
 Men det är nu fixat i min kod, och det är en förbättring.
 
 *Manuell skift-logik:* kod för att ta bort element kopierar efterföljande element ett steg till vänster. Detta är repetitivt, utsatt för fel, och onödigt när kollektioner erbjuder denna funktion.
