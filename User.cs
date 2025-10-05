@@ -11,6 +11,18 @@ namespace Kodanalys {
         private static List<string> userList = new();
 
         /// <summary>
+        /// Kontrollerar att det finns användare, och om inte, skriv ut ett felmeddelande
+        /// </summary>
+        public static bool UserListExists() {
+            if ( userList.Count == 0 ) {
+                Helpers.ColoredText( $"\nDet finns inga användare ännu.", ConsoleColor.Red );
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
         /// Lägger till en ny användare
         /// </summary>
         public static void AddUser() {
@@ -40,10 +52,7 @@ namespace Kodanalys {
         public static void ListUsers() {
 
             // Kontrollera att det _inte_ finns några användare
-            if ( userList.Count == 0 ) {
-                Helpers.ColoredText( "\nInga användare hittades.", ConsoleColor.Red );
-                return;
-            }
+            if( !UserListExists() ) return;
 
             Console.WriteLine( "\n====== Användare ======" );
 
@@ -59,6 +68,9 @@ namespace Kodanalys {
         /// Tar bort en användare
         /// </summary>
         public static void DeleteUser() {
+
+            // Kontrollera att det finns användare att radera
+            if ( !UserListExists() ) return;
 
             // Be om namn att ta bort
             Console.Write( "\nAnge namn att ta bort: " );
@@ -83,6 +95,9 @@ namespace Kodanalys {
         /// Söker efter en användare
         /// </summary>
         public static void SearchUser() {
+
+            // Kontrollera att det finns användare att söka efter
+            if ( !UserListExists() ) return;
 
             // Be om namn att söka efter
             Console.Write( "\nAnge namn att söka: " );
