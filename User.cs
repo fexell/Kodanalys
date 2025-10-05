@@ -61,7 +61,7 @@ namespace Kodanalys {
         public static void DeleteUser() {
 
             // Be om namn att ta bort
-            Console.Write( "Ange namn att ta bort: " );
+            Console.Write( "\nAnge namn att ta bort: " );
             string nameInput = Helpers.ValidateName( Console.ReadLine() );
 
             // Kontrollera att namnet finns
